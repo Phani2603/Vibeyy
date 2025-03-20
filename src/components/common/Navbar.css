@@ -1,0 +1,148 @@
+/* Add any custom styles that can't be handled by Material UI's styled components */
+.MuiDrawer-paper {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.MuiListItem-root {
+  border-radius: 8px;
+  margin: 4px 8px;
+  transition: all 0.3s ease;
+}
+
+.MuiListItem-root:hover {
+  background: rgba(99, 101, 241, 0.204);
+}
+
+/* Animation for drawer items */
+.MuiListItem-root {
+  animation: slideIn 0.3s ease forwards;
+  opacity: 0;
+}
+
+.MuiListItem-root:nth-child(1) { animation-delay: 0.1s; }
+.MuiListItem-root:nth-child(2) { animation-delay: 0.2s; }
+.MuiListItem-root:nth-child(3) { animation-delay: 0.3s; }
+.MuiListItem-root:nth-child(4) { animation-delay: 0.4s; }
+.MuiListItem-root:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Custom scrollbar for drawer */
+.MuiDrawer-paper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.MuiDrawer-paper::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 4px;
+}
+
+.MuiDrawer-paper::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.MuiDrawer-paper::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Floating animation for navbar */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Add subtle floating animation when not scrolled */
+.MuiAppBar-root:not(.scrolled) {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Enhanced hover effects for buttons */
+.MuiButton-root {
+  position: relative;
+  overflow: hidden;
+}
+
+.MuiButton-root::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.MuiButton-root:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Glass effect for mobile menu */
+.MuiDrawer-paper {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: -4px 0 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced navigation links */
+.MuiButton-text {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.MuiButton-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #6365f127;
+  transition: all 0.3s ease;
+  /* transform: translateX(-50%); */
+}
+
+.MuiButton-text:hover::after {
+  width: 100%;
+}
+
+/* Add subtle glow effect to the navbar */
+.MuiAppBar-root {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08),
+              0 0 0 1px rgba(255, 255, 255, 0.1),
+              0 0 20px rgba(99, 102, 241, 0.1);
+}
+
+/* Enhanced mobile menu button */
+.MuiIconButton-root {
+  transition: all 0.3s ease;
+}
+
+.MuiIconButton-root:hover {
+  background: rgba(99, 102, 241, 0.1);
+  transform: scale(1.1);
+} 
